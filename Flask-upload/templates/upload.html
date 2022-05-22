@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask上传图片</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+<div class="topnav">
+    <a href="index">首页</a>
+    <a href="upload">上传</a>
+</div>
+<div class="card">
+    <form action="/upload" enctype='multipart/form-data' method='POST'>
+        <input type="file" name="file" />
+        <input type="submit" value="上传" class="button-new"/>
+    </form>
+     <h4>{{msg}}</h4>
+    <div>
+     {% for url in urllist%}
+        <img src="{{ url }}" width="300px">
+     {% endfor %}
+    </div>
+</div>
+</body>
+</html>
